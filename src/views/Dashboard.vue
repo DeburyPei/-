@@ -18,8 +18,12 @@
             <LeftMenu class="menu"/>
     </el-aside>
     <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
+        <el-header>
+            <RightHeader />
+        </el-header>
+        <el-main>
+            <RightMain />
+        </el-main>
     </el-container>
 </el-container>
 
@@ -28,14 +32,17 @@
 <script>
 
 import LeftMenu from "../components/dashboard/leftMenu.vue"
-import MainContent from "../components/dashboard/rightMain.vue"
+import RightMain from "../components/dashboard/rightMain.vue"
+import RightHeader from "../components/dashboard/rightHeader.vue"
+
 
 export default {
     
     name:"Dashboard",
     components:{
         LeftMenu,
-        MainContent
+        RightMain,
+        RightHeader
     },
     data() {
       return {
@@ -99,5 +106,8 @@ h2{
     height: 100%;
     width: 50px;
 }
+.el-header{
+  background: #ededed;;
 
+}
 </style>

@@ -1,17 +1,19 @@
 <template>
 <el-container style=" width: 200px!important;">
   <el-aside width="201px" style="background-color: #2a3f54">
-    <el-menu :unique-opened="true" :default-active="$route.path" 
+    <el-menu :unique-opened="true" 
+               :default-active="$route.path" 
                @select="handleSelect"
                background-color="#2a3f54"
                text-color="#fff"
-               active-text-color="#ffd04b"
-
-               
+               active-text-color="#ffd04b"    
                >
       <el-submenu index="1">
         <template slot="title">
-            <i class="el-icon-message"></i>首页</template>
+         
+            <i class="el-icon-message"></i>
+            <router-link to="/dashboard"><span style="color:#fff;">首页</span> </router-link>
+          </template>
         
       </el-submenu>
       <el-submenu index="2">
@@ -66,17 +68,19 @@
 </template>
 
 <script>
+import router from '@/router';
+
 export default {
-  name: "LeftMenu",
- 
-  methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
-    }
+    name: "LeftMenu",
+    methods: {
+        handleOpen(key, keyPath) {
+            console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+            console.log(key, keyPath);
+        }
+    },
+    components: { router }
 };
 </script>
     
