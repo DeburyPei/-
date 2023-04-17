@@ -1,7 +1,7 @@
 <template>
-    <div id="dashboard">
-        <div class="left">
-            <div class="logoAndTitle">
+    <el-container>
+    <el-aside width="200px" >  
+        <div class="logoAndTitle">
                 <img src="../assets/logo/logo.svg" alt="" class="logo" />
                 <h2>起航科技</h2>
             </div>
@@ -15,63 +15,49 @@
                     <h3>qqq123</h3>
                 </div>
             </div>
-            <LeftMenu />
-        </div> 
-        <div class="right main-container">
-            <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-                <el-radio-button :label="false">展开</el-radio-button>
-                <el-radio-button :label="true">收起</el-radio-button>
-            </el-radio-group>
-        </div>
-    </div>
+            <LeftMenu class="menu"/>
+    </el-aside>
+    <el-container>
+        <el-header>Header</el-header>
+        <el-main>Main</el-main>
+    </el-container>
+</el-container>
+
 </template>
 
 <script>
 
 import LeftMenu from "../components/dashboard/leftMenu.vue"
+import MainContent from "../components/dashboard/rightMain.vue"
+
 export default {
     
     name:"Dashboard",
     components:{
-        LeftMenu
+        LeftMenu,
+        MainContent
     },
     data() {
       return {
-        isCollapse: true
+       
       };
     },
 }
 </script>
 
 <style scoped>
-#dashboard{
-    display: flex;
-}
-.main-container{
-    min-height: 100%;
-    -webkit-transition: margin-left .28s;
-    transition: margin-left .28s;
-    margin-left: 230px;
-    position: relative;
+
+.el-container {
+		height: 100%;
 }
 h2{
     
     color: white;
 }
-.left{
-    transition: width .28s;
-    width: 200px!important;
-    background-color: #2a3f54; 
-    height: 100%;
-    position: fixed;
-    width: 200px!important;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1001;
-    overflow: hidden;
-}
 
+.menu{
+    height:calc(100% - 130px);
+}
 .logoAndTitle{
     display: flex;
    
@@ -89,6 +75,7 @@ h2{
     color: #fff;
     font-size: 14px;
     display: flex;
+    background:#2a3f54;
 }
 .user_infomation .profile_pic{
     width: 35%;
@@ -112,4 +99,5 @@ h2{
     height: 100%;
     width: 50px;
 }
+
 </style>

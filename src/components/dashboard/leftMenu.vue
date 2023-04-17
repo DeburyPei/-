@@ -1,10 +1,13 @@
 <template>
-<el-container style="height: 500px; width: 200px!important;">
+<el-container style=" width: 200px!important;">
   <el-aside width="201px" style="background-color: #2a3f54">
     <el-menu :unique-opened="true" :default-active="$route.path" 
                @select="handleSelect"
                background-color="#2a3f54"
                text-color="#fff"
+               active-text-color="#ffd04b"
+
+               
                >
       <el-submenu index="1">
         <template slot="title">
@@ -65,7 +68,7 @@
 <script>
 export default {
   name: "LeftMenu",
-  props:["isCollapse"],
+ 
   methods: {
       handleOpen(key, keyPath) {
         console.log(key, keyPath);
