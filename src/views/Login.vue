@@ -7,7 +7,6 @@
         <h1>起航科技</h1>
       </div>
     </div>
-
     <div class="background-bottom">
       <img src="../assets/bgImg/login/login_background_bottom.png" alt="" />
     </div>
@@ -79,7 +78,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .logoAndTitle {
   display: flex;
   position: absolute;

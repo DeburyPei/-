@@ -5,23 +5,20 @@ import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
         name:'root',
         path: '/',
-        components:{
-          main:Login
-        }
+        component:Login
+        
 
     },
     {
         name:'dashboard',
         path: '/dashboard',
-        components:{
-          main:Dashboard
-        }
+        component:Dashboard
+        
         
     },
     // {

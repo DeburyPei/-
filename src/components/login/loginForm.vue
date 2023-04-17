@@ -11,10 +11,10 @@
               >
               <img src="../../assets/bgImg/login/login_pwd.png" alt=""
             /></span>
-            <input type="password" placeholder="请输入密码" >
+            <input type="new-password" placeholder="请输入密码" >
           </div>
           <div class="btnBox">
-            <router-link to="dashboard">
+            <router-link to="/dashboard">
             <button type="button" class="submitBtn">
                 <span>立即登录</span>
             </button>
@@ -24,7 +24,7 @@
         </form>
 </template>
 
-<script>
+<script scoped>
 export default {
     name:"LoginForm"
 }

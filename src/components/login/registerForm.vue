@@ -11,14 +11,14 @@
               >
               <img src="../../assets/bgImg/login/login_pwd.png" alt=""
             /></span>
-            <input type="password" placeholder="请输入密码" >
+            <input type="new-password" placeholder="请输入密码" >
           </div>
           <div class="form_item">
             <span class="svg-container"
               >
               <img src="../../assets/bgImg/login/login_pwd.png" alt=""
             /></span>
-            <input type="password" placeholder="请再次输入密码" >
+            <input type="new-password" placeholder="请再次输入密码" >
           </div>
           <div class="btnBox">
             <button type="button" class="submitBtn">
@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 form{
     margin-top: 25px;
 }
