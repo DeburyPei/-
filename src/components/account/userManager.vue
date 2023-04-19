@@ -78,7 +78,7 @@
 
 <script>
 export default {
-    name: "CargoInfoManager",
+    name: "UserManager",
     data() {
       return {
         dialogFormVisible:false,
@@ -89,7 +89,6 @@ export default {
             cargo_type:'',
             capacity:'',
             weight:'',
-            
         },
         tableData: [{
             id: '10001',

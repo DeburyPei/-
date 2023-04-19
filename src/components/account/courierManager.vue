@@ -78,7 +78,7 @@
 
 <script>
 export default {
-    name: "CargoInfoManager",
+    name: "CourierManager",
     data() {
       return {
         dialogFormVisible:false,

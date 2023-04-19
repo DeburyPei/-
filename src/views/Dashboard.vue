@@ -35,7 +35,7 @@
 <script>
 
 import LeftMenu from "../components/dashboard/leftMenu.vue"
-import RightMain from "../components/dashboard/rightMain.vue"
+
 import RightHeader from "../components/dashboard/rightHeader.vue"
 
 
@@ -44,7 +44,7 @@ export default {
     name:"Dashboard",
     components:{
         LeftMenu,
-        RightMain,
+        
         RightHeader
     },
     data() {
@@ -67,6 +67,8 @@ h2{
 
 .menu{
     height:calc(100% - 130px);
+    background:#2a3f54;
+
 }
 .logoAndTitle{
     display: flex;

@@ -178,7 +178,7 @@ export default {
 .form_logo{
     width: 80px;
     height: 80px;
-    margin: 30px auto;
+    
     margin-top: 45px;
 }
 .huan{

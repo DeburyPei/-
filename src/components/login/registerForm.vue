@@ -10,7 +10,16 @@
             <span class="svg-container"
               >
               <img src="../../assets/bgImg/login/login_pwd.png" alt=""
+              
             /></span>
+            <input  placeholder="请输入手机号" >
+          </div>
+          <div class="form_item">
+            <span class="svg-container"
+              >
+              <img src="../../assets/bgImg/login/login_pwd.png" alt=""
+            /></span>
+            
             <input type="new-password" placeholder="请输入密码" >
           </div>
           <div class="form_item">
