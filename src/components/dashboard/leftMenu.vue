@@ -3,7 +3,8 @@
   <el-aside width="201px" style="background-color: #2a3f54">
     <el-menu :unique-opened="true" 
                :default-active="$route.path" 
-               @select="handleSelect"
+               router
+               @select=""
                background-color="#2a3f54"
                text-color="#fff"
                active-text-color="#ffd04b"    
@@ -26,36 +27,37 @@
       <el-submenu index="3">
         <template slot="title"><i class="el-icon-edit"></i>船舶管理</template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">公告管理</el-menu-item>
-          <el-menu-item index="2-2">发送公告</el-menu-item>
+          <el-menu-item index="/ship/info" route="">基本信息管理</el-menu-item>
+          <el-menu-item index="2-2">船舶状态跟踪</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="4">
-        <template slot="title"><i class="el-icon-location"></i>航线管理</template>
+        <template slot="title"><i class="el-icon-menu"></i>货物管理</template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">公告管理</el-menu-item>
-          <el-menu-item index="2-2">发送公告</el-menu-item>
+          <el-menu-item index="/cargo/info">基本信息管理</el-menu-item>
+          <el-menu-item index="2-2">货物跟踪</el-menu-item>
+          <el-menu-item index="2-3">货物入库</el-menu-item>
+          
+          
+
+
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="5">
-        <template slot="title"><i class="el-icon-menu"></i>货物管理</template>
+        <template slot="title"><i class="el-icon-location"></i>航线管理</template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">公告管理</el-menu-item>
-          <el-menu-item index="2-2">发送公告</el-menu-item>
+          <el-menu-item index="2-1">航线规划</el-menu-item>
+          <el-menu-item index="2-2">航线优化</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="6">
         <template slot="title"><i class="el-icon-time"></i>调度与任务分配</template>
-        <el-menu-item-group>
-          <el-menu-item index="2-1">公告管理</el-menu-item>
-          <el-menu-item index="2-2">发送公告</el-menu-item>
-        </el-menu-item-group>
+        
       </el-submenu>
       <el-submenu index="7">
         <template slot="title"><i class="el-icon-tickets"></i>订单管理</template>
         <el-menu-item-group>
-          <el-menu-item index="2-1">公告管理</el-menu-item>
-          <el-menu-item index="2-2">发送公告</el-menu-item>
+          
         </el-menu-item-group>
       </el-submenu>
     </el-menu>

@@ -21,8 +21,11 @@
         <el-header>
             <RightHeader />
         </el-header>
-        <el-main>
-            <RightMain />
+        <el-main >
+            <div class="app-main">
+                <router-view></router-view>
+            </div>
+          
         </el-main>
     </el-container>
 </el-container>
@@ -109,5 +112,12 @@ h2{
 .el-header{
   background: #ededed;;
 
+}
+.el-main{
+  background: #fcfcfc;
+    padding: 10px;
+}
+.app-main{
+    background:#ffffff;
 }
 </style>

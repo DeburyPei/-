@@ -7,57 +7,78 @@
         <el-breadcrumb-item>活动列表</el-breadcrumb-item>
         <el-breadcrumb-item>活动详情</el-breadcrumb-item>
       </el-breadcrumb>
-      <div class="right-menu" @click='isProfieMenu=!isProfieMenu'>
+      <el-dropdown>
+        <span class="el-dropdown-link">
+             <div class="right-menu" @click='isProfieMenu=!isProfieMenu'>
         <img src="../../assets/bgImg/dashboard/profile_pic.png" alt="" />
         <span class="user-name">qqq123</span>
-        <i class="el-icon-caret-bottom user-icon"></i>
-        <ul  v-show="this.isProfieMenu"
-        class="el-dropdown-menu el-popper el-dropdown-menu--medium"
-          id="dropdown-menu" style="transform-origin: center top; z-index: 2001; "
-          x-placement="bottom-end"
-        >
-          <div >
-            <li  tabindex="-1" class="el-dropdown-menu__item">
-              <!---->个人信息
-            </li>
-          </div>
-          <div >
-            <li  tabindex="-1" class="el-dropdown-menu__item">
-              <!---->修改密码
-            </li>
-          </div>
-          
-          <a  href="#/dashboard" class="router-link-active"
-            ><li
-              
-              tabindex="-1"
-              class="el-dropdown-menu__item"
-            >
-              <!---->首页
-            </li></a
-          >
-          <li
-            tabindex="-1"
-            class="el-dropdown-menu__item el-dropdown-menu__item--divided"
-          >
-            <!----><span  style="display: block"
-              >退出登录</span
-            >
-          </li>
-          <div x-arrow="" class="popper__arrow" style="left: 28px"></div>
-        </ul>
+        <i class="el-icon-arrow-down el-icon--right"></i>
+      
+        
       </div>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>首页</el-dropdown-item>
+            <el-dropdown-item @click.native="dialogFormVisible=true">修改密码</el-dropdown-item>
+            <el-dropdown-item divided>退出登录</el-dropdown-item>
+           
+        </el-dropdown-menu>
+        </el-dropdown>
+     
+      <el-dialog title="修改密码" :visible.sync="dialogFormVisible" width="40%"  >
+            <el-form >
+                <el-form-item label="旧密码" >
+                    <el-input type="password" v-model="ruleForm.oldPass" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="新密码" >
+                    <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="再输入新密码" >
+                    <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item style="display: flex;justify-content: flex-end;margin-top: 10px;">
+                    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+                    <el-button @click="resetForm('ruleForm')">重置</el-button>
+                </el-form-item>
+            </el-form>
+        </el-dialog>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "RightHeader",
   data(){
     return{
         isProfieMenu: false,
+        dialogFormVisible:false,
+        ruleForm: {
+            oldPass:'',
+          pass: '',
+          checkPass: '',
+        
+        }
     }
+
+  },
+  methods:{
+   
+      submitForm(formName) {
+        
+            alert('submit!');
+          
+      },
+      resetForm(formName) {
+         Object.assign(this.ruleForm,{
+            oldPass:'',
+          pass: '',
+          checkPass: '',
+        
+        })
+      }
+    
   }
 };
 </script>
@@ -79,10 +100,18 @@ export default {
   font-size: 12px;
   margin-left: 7px;
 }
-#dropdown-menu{
+/* #dropdown-menu{
     position: absolute;
     top: 36px;
-    left: 893px;
+    left: calc(100vw - 133px);
+} */
+.el-form-item{
+    margin-bottom: 0;
 }
-
+.el-form{
+    margin-top: 0;
+}
+.el-dialog{
+    width: 40%;
+}
 </style>
